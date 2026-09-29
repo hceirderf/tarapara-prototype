@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0E1A2B">
+  <meta name="description" content="TaraPara! clickable prototype: where to ride, where to get off, and what to pay in Pasay, Makati, Taguig, Pasig and Parañaque. Illustrative data.">
+  <title>TaraPara! · Prototype</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FFB703'/%3E%3Cpath d='M32 12c-10 0-18 7.6-18 17.2C14 42 32 54 32 54s18-12 18-24.8C50 19.6 42 12 32 12z' fill='%230E1A2B'/%3E%3Crect x='29' y='20' width='6' height='14' rx='3' fill='%23FFB703'/%3E%3Ccircle cx='32' cy='40' r='3.4' fill='%23FFB703'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="stage">
+    <!-- Desktop-only brand block beside the phone -->
+    <header class="stage-brand" aria-hidden="true">
+      <div class="stage-logo">
+        <span class="logo-mark sm"></span>
+        <span class="wordmark">Tara<span>Para</span><em>!</em></span>
+      </div>
+      <p class="stage-tag">Alam mo kung saan sasakay.<br>Alam mo kung saan bababa.</p>
+      <p class="stage-meta">Clickable prototype · illustrative data<br>Pasay · Makati · Taguig · Pasig · Parañaque</p>
+    </header>
+
+    <p class="stage-keys" aria-hidden="true"><kbd>1</kbd>–<kbd>8</kbd> screens · <kbd>N</kbd> next step · <kbd>R</kbd> reset · <kbd>H</kbd> demo panel</p>
+
+    <!-- Phone -->
+    <div id="phone">
+      <div id="app" class="dark-status">
+        <div id="statusbar">
+          <span class="sb-time">9:41</span>
+          <span class="proto-tag" title="All routes, fares and times are examples">Prototype · illustrative data</span>
+          <span class="sb-icons" id="sb-icons"></span>
+        </div>
+
+        <main id="screen">
+          <!-- Home / Map overlay (everything map-related lives on one map) -->
+          <section id="map-screen" aria-label="Map">
+            <svg id="map" role="img" aria-label="Schematic transit map of Pasay, Makati, Taguig, Pasig and Parañaque" xmlns="http://www.w3.org/2000/svg"></svg>
+            <div id="offline-banner" role="status" hidden></div>
+            <div id="topui"></div>
+            <div id="suggest" hidden></div>
+            <div id="map-ctrls"></div>
+            <div id="map-note">Schematic map · not to scale</div>
+            <div id="ad" hidden></div>
+            <section id="sheet" aria-live="polite"></section>
+          </section>
+
+          <!-- Full-screen pages -->
+          <section id="premium" class="page page-up" aria-label="TaraPara! Premium" hidden></section>
+          <section id="operators" class="page page-side" aria-label="For Operators" hidden></section>
+
+          <div id="menu-scrim" class="scrim" data-act="menu-close"></div>
+          <nav id="menu" aria-label="Menu" hidden></nav>
+
+          <div id="modal-scrim" class="scrim" data-act="modal-close"></div>
+          <section id="modal" role="dialog" aria-modal="true" hidden></section>
+
+          <!-- Welcome -->
+          <section id="welcome" aria-label="Welcome"></section>
+
+          <div id="notif" role="alert" hidden></div>
+          <div id="toast" role="status" aria-live="polite"></div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Demo helpers (desktop only, outside the phone) -->
+    <button id="demo-btn" type="button" aria-controls="demo-panel" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      Demo
+    </button>
+    <aside id="demo-panel" aria-label="Demo controls" hidden>
+      <div class="dp-head">
+        <div>
+          <p class="dp-kicker">Presenter</p>
+          <h2>Demo controls</h2>
+        </div>
+        <button class="dp-close" type="button" data-act="demo-toggle" aria-label="Hide demo panel (H)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <section class="dp-sec">
+        <div class="dp-sec-head">
+          <h3>Guided path · about 90 s</h3>
+          <button type="button" class="dp-next" data-act="guide-next">Next step <kbd>N</kbd></button>
+        </div>
+        <ol id="dp-guide" class="dp-guide"></ol>
+      </section>
+
+      <section class="dp-sec">
+        <h3>Jump to a screen</h3>
+        <div id="dp-screens" class="dp-screens"></div>
+      </section>
+
+      <section class="dp-sec">
+        <button type="button" class="dp-reset" data-act="reset">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v6h6M4.6 15a8 8 0 1 0 1.9-8.3L4 10"/></svg>
+          Reset demo <kbd>R</kbd>
+        </button>
+        <p class="dp-hint">Keys: <kbd>1</kbd>–<kbd>8</kbd> jump · <kbd>N</kbd> next step · <kbd>R</kbd> reset · <kbd>H</kbd> hide panel · <kbd>Esc</kbd> close sheet</p>
+      </section>
+    </aside>
+  </div>
+
+  <noscript><p class="noscript">TaraPara! needs JavaScript to run this prototype.</p></noscript>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
