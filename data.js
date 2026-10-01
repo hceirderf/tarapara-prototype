@@ -528,7 +528,7 @@ window.TP_DATA = {
     pricing: {
       intro: '₱399 / month',
       then: 'for the first 6 months, then ₱699 / month',
-      founding: 'Founding partners: ₱699 for the first 6 months'
+      founding: 'Founding partners: ₱699 once for the first 6 months'
     }
   },
 
