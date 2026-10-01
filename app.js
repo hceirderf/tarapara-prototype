@@ -1231,7 +1231,7 @@
     { t: 'Open the jeep’s Transport Detail', s: 'Verified Sep 2026, fare basis, 20% discount, Comments tab.', run: () => { planPair('pitx>ayala'); selectOpt(2); openDetail('mj-pitx-ayala', S.sheet); } },
     { t: 'Premium · ₱99 / 3 months', s: 'Subscribe → fake checkout. Ads disappear, Save appears.', run: () => openPremium() },
     { t: 'Offline toggle', s: '“Offline — showing saved routes.” Saved trips still open.', run: () => demoOffline() },
-    { t: 'For Operators', s: 'Verified Partner, demand report, ₱1,399 for 6 months.', run: () => openOperators() }
+    { t: 'For Operators', s: 'Verified Partner, demand report, ₱399 a month for 6 months.', run: () => openOperators() }
   ];
   const SCREENS = [
     { t: 'Welcome', run: () => { baseline(); S.welcome = true; render(); } },
